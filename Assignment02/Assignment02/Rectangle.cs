@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assignment02
+﻿namespace Assignment02
 {
     public class Rectangle
     {
@@ -19,8 +13,8 @@ namespace Assignment02
 
         public Rectangle(int initialLength, int initialWidth) //Non-Default
         {
-            length = initialLength;
-            width = initialWidth;
+            SetLength(initialLength);
+            SetWidth(initialWidth);
         }
 
         public int GetLength()
@@ -30,7 +24,13 @@ namespace Assignment02
 
         public int SetLength(int newLength)
         {
-            length = newLength;
+            if (newLength < 1)
+                length = 1;
+            else if (newLength > 1100)
+                length = 1100;
+            else
+                length = newLength;
+
             return length;
         }
 
@@ -41,7 +41,13 @@ namespace Assignment02
 
         public int SetWidth(int newWidth)
         {
-            width = newWidth;
+            if (newWidth < 1)
+                width = 1;
+            else if (newWidth > 1100)
+                width = 1100;
+            else
+                width = newWidth;
+
             return width;
         }
 
